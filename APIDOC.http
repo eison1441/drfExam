@@ -1,0 +1,93 @@
+#2 user
+#1st user test:password@123
+#2nd user test2:password@123
+
+
+
+
+
+# user creation
+
+###
+POST http://127.0.0.1:8000/meal/user/
+Content-Type: application/json
+
+{
+    "username":"test2",
+    "email":"test@gmail.com",
+    "password":"password@123"
+}
+
+# meal adding
+
+###
+POST http://127.0.0.1:8000/meal/mealadd/
+Authorization: Basic test2:password@123
+Content-Type: application/json
+
+{
+    "Name_of_meal":"Pufs",
+    "meal_type":"Snack",
+    "calories":35
+
+}
+
+
+#list all meals of user
+
+
+###
+GET http://127.0.0.1:8000/meal/mealadd/
+Authorization: Basic test:password@123
+
+
+#deatil list of  one meal 
+
+###
+GET http://127.0.0.1:8000/meal/meals/7/
+Authorization: Basic test2:password@123
+
+
+#update a meal
+
+###
+PUT http://127.0.0.1:8000/meal/meals/1/
+Authorization: Basic test:password@123
+Content-Type: application/json
+
+{
+  "meal_type": "Lunch",
+  "calories": 500,
+  "Name_of_meal": "Biriyani"
+
+}
+
+# delete a meal
+
+
+###
+DELETE http://127.0.0.1:8000/meal/meals/1/
+Authorization: Basic test:password@123
+
+
+#total calorie 
+
+###
+GET http://127.0.0.1:8000/meal/mealtotalcalorie/2/
+Authorization: Basic test:password@123
+
+
+#date and meal type
+
+###
+Get http://127.0.0.1:8000/meal/date/mealtype/
+Authorization: Basic test:password@123
+
+
+
+#calorie intake
+
+###
+
+# Get http://127.0.0.1:8000/meal/date/calorieintake/
+# Authorization: Basic test:password@123
